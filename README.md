@@ -65,6 +65,7 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |PGF_File|Probe to Probeset mapping .pgf (Probe Group File) file for summarization|
 |CLF_File|Probe position mapping .clf (Cel Layout File) file for summarization|
 |BGP_File|Background probe .bgp (BackGround Probe) file for summarization|
+|APT_Root|Path to Affy Power Tools binaries|
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
 |sample_description_file|Name of Sample Description File|
 |cluster_distance| Distance metric for dendrogram.  Can be *Euclidean* or *Pearson_Dissimilarity*|
