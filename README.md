@@ -6,7 +6,7 @@ Template for normalization, QC, differential expression, and preparation of file
 
 0b) `create_cel_list.py` - create list of .CEL files to normalization (.CEL files can be located in different folders, with full path specified in file)
 
-1) `apt_summarize.py`
+1) `apt_RMA_DABG_summarize.py`
 
 ### Dependencies (some optional) ###
 
