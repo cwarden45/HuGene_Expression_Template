@@ -2,7 +2,7 @@ Template for normalization, QC, differential expression, and preparation of file
 
 ### Order to Run Scripts ###
 
-0)
+0) `create_gene_symbol_mps.R` - creates .mps file for gene symbol summarization, using probeset gene annotations
 
 1) 
 
