@@ -8,6 +8,16 @@ Template for normalization, QC, differential expression, and preparation of file
 
 ### Dependencies (some optional) ###
 
+*Normalization*
+
+Affy Power Tools (apt-probeset-summarize): http://www.affymetrix.com/estore/partners_programs/programs/developer/tools/powertools.affx
+
+*Array Annotation Files*:
+
+HuGene: http://www.affymetrix.com/catalog/131453/AFFY/Human+Gene+ST+Arrays 
+HuGene-2.0 (.pgf, .clf, .bgp, Transcript Cluster .mps files): [Library Files](http://www.affymetrix.com/Auth/analysis/downloads/lf/wt/HuGene-2_0-st/HuGene-2_0-st_rev1.zip)
+HuGene-2.0 (gene annotations): [probeset](http://www.affymetrix.com/Auth/analysis/downloads/na36/wtgene/HuGene-2_0-st-v1.na36.hg19.probeset.csv.zip) and [transcript cluster](http://www.affymetrix.com/Auth/analysis/downloads/na36/wtgene/HuGene-2_0-st-v1.na36.hg19.transcript.csv.zip) annotations are under `Current NetAffx Annotation Files`
+
 *Differential Expression*
 
 limma: https://bioconductor.org/packages/release/bioc/html/limma.html
