@@ -9,6 +9,7 @@ Template for normalization, QC, differential expression, and preparation of file
 1) `apt_RMA_DABG_summarize.py`
 
 -template performs RMA summarization at gene symbol or transcript cluster level
+
 -template calculates call rate at probeset level
 
 2) `reformat_probesets.R`
