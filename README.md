@@ -65,6 +65,7 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |deg_groups|Names of columns in *sample_description_file* to be plotted in QC and differential expression plots.  Use commas to include multiple variables (for multivariate model or gene list filtering)|
 |treatment_group|Treatment group for primary variable; enter *continuous* for a continuous variable and a correlation will be provided instead of a fold-change value.|
 |CEL_Input|List of CEL files for normalization.  Can be created using `create_cel_list.py`|
+|RMA_expression_file|Table of RMA expression values (on log2 scale)|
 |Raw_Code_PC|Path to output folder for most results|
 |Result_Folder|Path to output folder for selected, final results|
 |summary_method|Probeset summarization level.  Can be *transcript_cluster* or *gene_symbol*|
@@ -81,7 +82,7 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
 |sample_description_file|Name of Sample Description File|
 |cluster_distance| Distance metric for dendrogram.  Can be *Euclidean* or *Pearson_Dissimilarity*|
-|RMA_expression_cutoff|Rounding Value for RMA expression (approximately equal to maximum background signal level)|
+|RMA_expression_cutoff|Cutoff for RMA expression during differential expression (approximately equal to maximum background signal level)|
 |minimum_fraction_expressed|Minimum fraction of samples with expression above *rpkm_expression_cutoff*. Filter for differential expression anaylsis.|
 |fold_change_cutoff|Minimum fold-change difference to consider a gene differentially expressed|
 |cor_cutoff|If using a continuous variable, minimum absolute correlation to consider a gene differentially expressed|
