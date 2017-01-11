@@ -8,9 +8,11 @@ Template for normalization, QC, differential expression, and preparation of file
 
 1) `apt_RMA_DABG_summarize.py`
 
-2) `qc.R`
+2) `reformat_probesets.R`
 
-3) `DEG_IPA_PANTHER_input.R`
+3) `qc.R`
+
+4) `DEG_IPA_PANTHER_input.R`
 
 ### Dependencies (some optional) ###
 
