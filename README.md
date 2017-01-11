@@ -36,7 +36,7 @@ heatmap.3: https://github.com/obigriffith/biostar-tutorials/blob/master/Heatmaps
 
 heatmap.3 example: https://www.biostars.org/p/18211/
 
-*Gene Set Enrichment*
+*Gene Set Enrichment (downstream of templates)*
 
 IPA: http://www.ingenuity.com/
 
