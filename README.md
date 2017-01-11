@@ -55,7 +55,7 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |CEL_Input|List of CEL files for normalization.  Can be created using `create_cel_list.py`|
 |Raw_Code_PC|Path to output folder for most results|
 |Result_Folder|Path to output folder for selected, final results|
-|summary_method|Probeset summarization level.  Can be *transcript_cluster* or *gene_symbol|
+|summary_method|Probeset summarization level.  Can be *transcript_cluster* or *gene_symbol*|
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
 |sample_description_file|Name of Sample Description File|
 |cluster_distance| Distance metric for dendrogram.  Can be *Euclidean* or *Pearson_Dissimilarity*|
