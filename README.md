@@ -64,6 +64,7 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |---|---|
 |comp_name	| Name of differential expression comparison (used to name output file)
 |plot_groups | Names of columns in *sample_description_file* to be plotted in QC and differential expression plots.  Use commas to plot multiple groups|
+|plot_type | Are are QC color labels for "discrete" or "continous" variable?  Use commas to describe multiple variables.  If continous, orange=high, green=low|
 |deg_groups|Names of columns in *sample_description_file* to be plotted in QC and differential expression plots.  Use commas to include multiple variables (for multivariate model or gene list filtering)|
 |treatment_group|Treatment group for primary variable; enter *continuous* for a continuous variable and a correlation will be provided instead of a fold-change value.|
 |CEL_Input|List of CEL files for normalization.  Can be created using `create_cel_list.py`|
