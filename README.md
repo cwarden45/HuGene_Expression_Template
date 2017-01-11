@@ -40,6 +40,7 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |plot_groups | Names of columns in *sample_description_file* to be plotted in QC and differential expression plots.  Use commas to plot multiple groups|
 |deg_groups|Names of columns in *sample_description_file* to be plotted in QC and differential expression plots.  Use commas to include multiple variables (for multivariate model or gene list filtering)|
 |treatment_group|Treatment group for primary variable; enter *continuous* for a continuous variable and a correlation will be provided instead of a fold-change value.|
+|CEL_Input|List of CEL files for normalization.  Can be created using `create_cel_list.py`|
 |Raw_Code_PC|Path to output folder for most results|
 |Result_Folder|Path to output folder for selected, final results|
 |summary_method|Probeset summarization level.  Can be *transcript_cluster* or *gene_symbol|
