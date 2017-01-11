@@ -8,6 +8,9 @@ Template for normalization, QC, differential expression, and preparation of file
 
 1) `apt_RMA_DABG_summarize.py`
 
+-template performs RMA summarization at gene symbol or transcript cluster level
+-template calculates call rate at probeset level
+
 2) `reformat_probesets.R`
 
 3) `qc.R`
@@ -72,7 +75,7 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |CLF_File|Probe position mapping .clf (Cel Layout File) file for summarization|
 |BGP_File|Background probe .bgp (BackGround Probe) file for summarization|
 |APT_Root|Path to Affy Power Tools binaries|
-|DABG_Probe_Folder|Folder for probe-level call rate results|
+|DABG_Probeset_Folder|Folder for probe-level call rate results|
 |RMA_Cluster_Folder|Folder for gene symbol or transcript cluster summarized expression|
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
 |sample_description_file|Name of Sample Description File|
