@@ -14,7 +14,7 @@ Template for normalization, QC, differential expression, and preparation of file
 
 2) `reformat_RMA_expression.R`
 
-3) `reformat_call_rate.R` or `custom_call_threshold.R`
+3) `custom_call_threshold.R` or `reformat_call_rate.R`
 
 4) `qc.R`
 
@@ -80,6 +80,8 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |BGP_File|Background probe .bgp (BackGround Probe) file for summarization|
 |APT_Root|Path to Affy Power Tools binaries|
 |DABG_Probeset_Folder|Folder for probe-level call rate results|
+|DABG_Pvalue_Cutoff|P-value cutoff for calculating custom call rate in `custom_call_threshold.R`|
+|Call_Rate_Table|Table containing call rate values, combined with QC plots and added to sample description file in `qc.R`|
 |RMA_Cluster_Folder|Folder for gene symbol or transcript cluster summarized expression|
 |pvalue_method|Method to Calculate P-value. Can be *limma*, *lm* (linear regression), or *aov* (ANOVA)|
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
