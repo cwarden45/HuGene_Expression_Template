@@ -81,6 +81,7 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |APT_Root|Path to Affy Power Tools binaries|
 |DABG_Probeset_Folder|Folder for probe-level call rate results|
 |RMA_Cluster_Folder|Folder for gene symbol or transcript cluster summarized expression|
+|pvalue_method|Method to Calculate P-value. Can be *limma*, *lm* (linear regression), or *aov* (ANOVA)|
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
 |sample_description_file|Name of Sample Description File|
 |cluster_distance| Distance metric for dendrogram.  Can be *Euclidean* or *Pearson_Dissimilarity*|
