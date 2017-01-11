@@ -9,6 +9,8 @@ sample.file = as.character(param.table$Value[param.table$Parameter == "sample_de
 call.rate.output = as.character(param.table$Value[param.table$Parameter == "Call_Rate_Table"])
 pval.cutoff = as.numeric(as.character(param.table$Value[param.table$Parameter == "DABG_Pvalue_Cutoff"]))
 
+setwd(output.folder)
+
 normalized.table = read.table(paste(dabg.folder,"dabg.summary.txt",sep="/"), sep="\t", header=T)
 probesetID = normalized.table$probeset_id
 print(length(probesetID))
