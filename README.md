@@ -63,8 +63,8 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |MPS_Gene_File|Probeset to Cluster mapping .mps (Meta ProbeSet) file for  *gene_symbol* summarization|
 |MPS_Transcript_Cluster_File|Probeset to Cluster mapping .mps file for *transcript_cluster* summarization|
 |PGF_File|Probe to Probeset mapping .pgf (Probe Group File) file for summarization|
-|CLF_File|.clf file for summarization|
-|BGP_File|.bgp file for summarization|
+|CLF_File|Probe position mapping .clf (Cel Layout File) file for summarization|
+|BGP_File|Background probe .bgp (BackGround Probe) file for summarization|
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
 |sample_description_file|Name of Sample Description File|
 |cluster_distance| Distance metric for dendrogram.  Can be *Euclidean* or *Pearson_Dissimilarity*|
