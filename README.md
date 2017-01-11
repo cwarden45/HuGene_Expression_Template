@@ -1,6 +1,3 @@
-# HuGene_Expression_Template
-template for Affymetrix HuGene array analysis
-
 ### Order to Run Scripts ###
 
 0)
