@@ -8,8 +8,6 @@ Template for normalization, QC, differential expression, and preparation of file
 
 ### Dependencies (some optional) ###
 
-Most Python scripts can be run using this [Docker image](https://hub.docker.com/r/cwarden45/rnaseq-dependencies/)
-
 *Differential Expression*
 
 limma: https://bioconductor.org/packages/release/bioc/html/limma.html
