@@ -58,6 +58,8 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |Raw_Code_PC|Path to output folder for most results|
 |Result_Folder|Path to output folder for selected, final results|
 |summary_method|Probeset summarization level.  Can be *transcript_cluster* or *gene_symbol*|
+|probeset_gene_annotations|CSV table of annotations for probesets (used for *gene symbol* summarization, created using .mps file from `create_gene_symbol_mps.R`)
+|transcript_cluster_annotations|CSV table of annotations for *transcript_cluster* summarization|
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
 |sample_description_file|Name of Sample Description File|
 |cluster_distance| Distance metric for dendrogram.  Can be *Euclidean* or *Pearson_Dissimilarity*|
