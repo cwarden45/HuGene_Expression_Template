@@ -1,3 +1,5 @@
+Template for normalization, QC, differential expression, and preparation of files for downstream analysis
+
 ### Order to Run Scripts ###
 
 0)
