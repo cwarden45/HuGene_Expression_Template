@@ -2,7 +2,9 @@ Template for normalization, QC, differential expression, and preparation of file
 
 ### Order to Run Scripts ###
 
-0) `create_gene_symbol_mps.R` - creates .mps file for gene symbol summarization, using probeset gene annotations
+0a) `create_gene_symbol_mps.R` - creates .mps file for gene symbol summarization, using probeset gene annotations
+
+0b) `create_cel_list.py` - create list of .CEL files to normalization (.CEL files can be located in different folders, with full path specified in file)
 
 1) 
 
