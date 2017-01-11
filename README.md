@@ -60,9 +60,9 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |summary_method|Probeset summarization level.  Can be *transcript_cluster* or *gene_symbol*|
 |probeset_gene_annotations|CSV table of annotations for probesets (used for *gene symbol* summarization, created using .mps file from `create_gene_symbol_mps.R`)
 |transcript_cluster_annotations|CSV table of annotations for *transcript_cluster* summarization|
-|MPS_Gene_File|Cluster to probeset mapping .mps file for  *gene_symbol* summarization|
-|MPS_Transcript_Cluster_File|Cluster to probeset mapping .mps file for *transcript_cluster* summarization|
-|PGF_File|.pgf file for summarization|
+|MPS_Gene_File|Probeset to Cluster mapping .mps (Meta ProbeSet) file for  *gene_symbol* summarization|
+|MPS_Transcript_Cluster_File|Probeset to Cluster mapping .mps file for *transcript_cluster* summarization|
+|PGF_File|Probe to Probeset mapping .pgf (Probe Group File) file for summarization|
 |CLF_File|.clf file for summarization|
 |BGP_File|.bgp file for summarization|
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
