@@ -12,11 +12,13 @@ Template for normalization, QC, differential expression, and preparation of file
 
 - template calculates call rate at probeset level
 
-2) `reformat_probesets.R`
+2) `reformat_RMA_expression.R`
 
-3) `qc.R`
+3) `reformat_call_rate.R` or `custom_call_threshold.R`
 
-4) `DEG_IPA_PANTHER_input.R`
+4) `qc.R`
+
+5) `DEG_IPA_PANTHER_input.R`
 
 ### Dependencies (some optional) ###
 
