@@ -66,10 +66,12 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |CLF_File|Probe position mapping .clf (Cel Layout File) file for summarization|
 |BGP_File|Background probe .bgp (BackGround Probe) file for summarization|
 |APT_Root|Path to Affy Power Tools binaries|
+|DABG_Probe_Folder|Folder for probe-level call rate results|
+|RMA_Cluster_Folder|Folder for gene symbol or transcript cluster summarized expression|
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
 |sample_description_file|Name of Sample Description File|
 |cluster_distance| Distance metric for dendrogram.  Can be *Euclidean* or *Pearson_Dissimilarity*|
-|RMA_expression_cutoff|Rounding Value for RMA expression (minimum reliable expression level)|
+|RMA_expression_cutoff|Rounding Value for RMA expression (approximately equal to maximum background signal level)|
 |minimum_fraction_expressed|Minimum fraction of samples with expression above *rpkm_expression_cutoff*. Filter for differential expression anaylsis.|
 |fold_change_cutoff|Minimum fold-change difference to consider a gene differentially expressed|
 |cor_cutoff|If using a continuous variable, minimum absolute correlation to consider a gene differentially expressed|
