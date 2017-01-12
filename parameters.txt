@@ -37,3 +37,4 @@ sec_pvalue_cutoff	0.05
 sec_fdr_cutoff	1.00
 interaction	no
 secondary_trt	NA
+R_GO  no
