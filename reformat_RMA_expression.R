@@ -64,7 +64,7 @@ if (summary.type == "gene_symbol"){
 	probe.count = probe.count.table$probe_count[match(probesetID, probe.count.table$probeset_id)]
 
 	gene.per.probe.count = rep(1,length(probesetID))
-	gene.per.probe.count[grep("^\\d",gene.per.probe.count,perl=T)]=NA
+	gene.per.probe.count[grep("^\\d",probesetID,perl=T)]=NA
 	
 	annotated.expression = data.frame(transcript.cluster=probesetID, Symbol=probesetID,
 										probe.count=probe.count,Num.Genes=gene.per.probe.count,
