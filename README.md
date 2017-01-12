@@ -108,3 +108,4 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |sec_fdr_cutoff|If comparing two gene lists, FDR threshold for list you want to filter out|
 |interaction| Method for comparing an interaction of two variables.  Can be *model*, *filter-overlap*, or *no*|
 |secondary_trt| If comparing two gene lists, this is treatment group for the list that you want to filter out; enter *continuous* for a continuous variable and a correlation will be provided instead of a fold-change value (also converts second variable from factor to numeric, even if interaction is set to *no*)|
+|R_GO|Run GOstat (map by transcript cluster) or perform Fisher Exact Test on gene symbols in GO.db|
