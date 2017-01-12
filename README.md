@@ -50,7 +50,9 @@ heatmap.3: https://github.com/obigriffith/biostar-tutorials/blob/master/Heatmaps
 
 heatmap.3 example: https://www.biostars.org/p/18211/
 
-*Gene Set Enrichment (downstream of templates)*
+*Gene Set Enrichment (in most cases, downstream of templates)*
+
+GOstats: http://bioconductor.org/packages/release/bioc/html/GOstats.html
 
 IPA: http://www.ingenuity.com/
 
