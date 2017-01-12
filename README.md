@@ -54,7 +54,7 @@ heatmap.3 example: https://www.biostars.org/p/18211/
 
 *Gene Set Enrichment (in most cases, downstream of templates)*
 
-GOstats: http://bioconductor.org/packages/release/bioc/html/GOstats.html
+[GOstats](http://bioconductor.org/packages/release/bioc/html/GOstats.html) and [pd.hugene.2.0.st](https://bioconductor.org/packages/release/data/annotation/html/pd.hugene.2.0.st.html)
 
 [GO.db](http://bioconductor.org/packages/release/data/annotation/html/GO.db.html) and [org.Hs.eg.db](http://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html) - used for mapping expression summarized based upon gene symbol, with enrichment calculated via fisher.test() instead of GOstats
 
