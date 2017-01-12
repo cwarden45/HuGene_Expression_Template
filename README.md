@@ -88,7 +88,7 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |fdr_method|Method to Calculate FDR.  Can be *BH* (Benjamini and Hochberg),*q-value*, or *q-lfdr*|
 |sample_description_file|Name of Sample Description File|
 |cluster_distance| Distance metric for dendrogram.  Can be *Euclidean* or *Pearson_Dissimilarity*|
-|RMA_expression_cutoff|Cutoff for RMA expression during differential expression (approximately equal to maximum background signal level)|
+|RMA_expression_cutoff|Cutoff for RMA expression during differential expression (ideally, the maximum background signal level).  I would recommend trying 3.5, 2, or 0|
 |minimum_fraction_expressed|Minimum fraction of samples with expression above *rpkm_expression_cutoff*. Filter for differential expression anaylsis.|
 |fold_change_cutoff|Minimum fold-change difference to consider a gene differentially expressed|
 |cor_cutoff|If using a continuous variable, minimum absolute correlation to consider a gene differentially expressed|
