@@ -58,7 +58,7 @@ heatmap.3 example: https://www.biostars.org/p/18211/
 
 GOstats: http://bioconductor.org/packages/release/bioc/html/GOstats.html)
 
-GO.db: http://bioconductor.org/packages/release/data/annotation/html/GO.db.html  - used for mapping expression summarized based upon gene symbol, with enrichment calculated via fisher.test() instead of GOstats
+GO.db: http://bioconductor.org/packages/release/data/annotation/html/GO.db.html
 
 IPA: http://www.ingenuity.com/
 
