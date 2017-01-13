@@ -107,6 +107,8 @@ output.folder = as.character(param.table$Value[param.table$Parameter == "Raw_Cod
 user.folder = as.character(param.table$Value[param.table$Parameter == "Result_Folder"])
 sample.description.file = as.character(param.table$Value[param.table$Parameter == "sample_description_file"])
 rma.file = as.character(param.table$Value[param.table$Parameter == "RMA_expression_file"])
+gostat.type = as.character(param.table$Value[param.table$Parameter == "R_GO_type"])
+run.gostat = as.character(param.table$Value[param.table$Parameter == "R_GO"])
 
 setwd(output.folder)
 
@@ -541,7 +543,7 @@ if (interaction.flag == "no"){
 		library(qvalue)
 		qobj <- qvalue(p = test.pvalue)
 		fdr = qobj$qvalue
-		png(paste(comp.name,"_",pvalue.method,"_qvalue_plot.png",sep=""))
+		png(paste(pvalue.method,"_qvalue_plot.png",sep=""))
 		qHist = hist(qobj)
 		print(qHist)
 		dev.off()
@@ -549,7 +551,7 @@ if (interaction.flag == "no"){
 		library(qvalue)
 		qobj <- qvalue(p = test.pvalue)
 		fdr = qobj$lfdr
-		png(paste(comp.name,"_",pvalue.method,"_qvalue_plot.png",sep=""))
+		png(paste(pvalue.method,"_qvalue_plot.png",sep=""))
 		qHist = hist(qobj)
 		print(qHist)
 		dev.off()
@@ -575,7 +577,7 @@ if (interaction.flag == "no"){
 			library(qvalue)
 			qobj <- qvalue(p = test.pvalue)
 			fdr = qobj$qvalue
-			png(paste(comp.name,"_",pvalue.method,"_qvalue_plot.png",sep=""))
+			png(paste(pvalue.method,"_qvalue_plot.png",sep=""))
 			qHist = hist(qobj)
 			print(qHist)
 			dev.off()
@@ -583,7 +585,7 @@ if (interaction.flag == "no"){
 			library(qvalue)
 			qobj <- qvalue(p = test.pvalue)
 			fdr = qobj$lfdr
-			png(paste(comp.name,"_",pvalue.method,"_qvalue_plot.png",sep=""))
+			png(paste(pvalue.method,"_qvalue_plot.png",sep=""))
 			qHist = hist(qobj)
 			print(qHist)
 			dev.off()
@@ -611,7 +613,7 @@ if (interaction.flag == "no"){
 			library(qvalue)
 			qobj <- qvalue(p = prim.pvalue)
 			fdr = qobj$qvalue
-			png(paste(comp.name,"_",pvalue.method,"_prim_qvalue_plot.png",sep=""))
+			png(paste(pvalue.method,"_qvalue_plot.png",sep=""))
 			qHist = hist(qobj)
 			print(qHist)
 			dev.off()
@@ -619,7 +621,7 @@ if (interaction.flag == "no"){
 			library(qvalue)
 			qobj <- qvalue(p = prim.pvalue)
 			fdr = qobj$lfdr
-			png(paste(comp.name,"_",pvalue.method,"_prim_qvalue_plot.png",sep=""))
+			png(paste(pvalue.method,"_qvalue_plot.png",sep=""))
 			qHist = hist(qobj)
 			print(qHist)
 			dev.off()
@@ -644,7 +646,7 @@ if (interaction.flag == "no"){
 			library(qvalue)
 			qobj <- qvalue(p = sec.pvalue)
 			sec.fdr = qobj$qvalue
-			png(paste(comp.name,"_",pvalue.method,"_sec_qvalue_plot.png",sep=""))
+			png(paste(pvalue.method,"_qvalue_plot.png",sep=""))
 			qHist = hist(qobj)
 			print(qHist)
 			dev.off()
@@ -652,7 +654,7 @@ if (interaction.flag == "no"){
 			library(qvalue)
 			qobj <- qvalue(p = sec.pvalue)
 			sec.fdr = qobj$lfdr
-			png(paste(comp.name,"_",pvalue.method,"_sec_qvalue_plot.png",sep=""))
+			png(paste(pvalue.method,"_qvalue_plot.png",sep=""))
 			qHist = hist(qobj)
 			print(qHist)
 			dev.off()
@@ -712,11 +714,11 @@ IPA.file = deg.table[(deg.table$genes.per.probe==1) & !is.na(deg.table$genes.per
 print(dim(IPA.file))
 write.table(IPA.file, file=paste(user.folder,"/IPA/",comp.name,"_for_IPA.txt",sep=""),sep="\t", row.names=F, quote=F)
 
-panther.up.genes = genes[(deg.table$genes.per.probe==1) & !is.na(deg.table$genes.per.probe)]
-print(length(panther.up.genes))
-print(length(unique(panther.up.genes)))
-panther.up.file = paste(user.folder,"/GO/Input_Files/",comp.name,"_BACKGROUND_for_PANTHER.txt",sep="")
-write.table(data.frame(genes=panther.up.genes),panther.up.file, quote=F, row.names=F)
+panther.background.genes = genes[(deg.table$genes.per.probe==1) & !is.na(deg.table$genes.per.probe)]
+print(length(panther.background.genes))
+print(length(unique(panther.background.genes)))
+panther.background.file = paste(user.folder,"/GO/Input_Files/",comp.name,"_BACKGROUND_for_PANTHER.txt",sep="")
+write.table(data.frame(genes=panther.background.genes),panther.background.file, quote=F, row.names=F)
 
 panther.up.genes = genes[(deg.table$status == upID) & (deg.table$genes.per.probe==1) & !is.na(deg.table$genes.per.probe)]
 print(length(panther.up.genes))
@@ -923,3 +925,232 @@ if(length(deg.genes) > 1){
 		dev.off()
 	}#end else
 }#end if(length(deg.genes) > 1)
+
+if((length(deg.genes) > 1) & (run.gostat == "yes")){
+	if(gostat.type == "GO.db"){
+		print("Collecting GO annotations")
+		library(GO.db)
+		library(org.Hs.eg.db)
+		orgdb = org.Hs.eg.db
+		orgdb.GOIDs = keys(orgdb, keytype="GO")
+		hg.goid.table = select(orgdb, keys=orgdb.GOIDs, columns=c("SYMBOL"), keytype="GO")
+		
+		GO.ID = keys(GO.db)
+		GO.term = c()
+		GO.type = c()
+		GO.genes = c()
+		GO.total.gene.count = c()
+		
+		for (i in 1:length(GO.ID)){
+			GO.term[i]=as.character(Term(GO.ID[i]))
+			GO.type[i]=as.character(Ontology(GO.ID[i]))
+			
+			if (GO.ID[i] %in% orgdb.GOIDs){
+				temp.symbols = unique(as.character(hg.goid.table$SYMBOL[hg.goid.table$GO == GO.ID[i]]))
+				GO.genes[i]=paste(temp.symbols, collapse=",")
+				GO.total.gene.count[i]=length(temp.symbols)
+			}else{
+				GO.genes[i]=NA
+				GO.total.gene.count[i]=NA
+			}
+		}#end for (i in 1:length(GO.ID))
+		
+		GO.info = data.frame(GO.ID=GO.ID, GO.term=GO.term, GO.type=GO.type, total.gene.count = GO.total.gene.count)
+		print(dim(GO.info))
+		GO.info = GO.info[!is.na(GO.info$total.gene.count) & (GO.info$total.gene.count > 20),]
+		print(dim(GO.info))
+		
+		background.genes = unique(as.character(panther.background.genes))
+		
+		print("Performing GO enrichment for up-regulated genes")
+		up.genes = unique(as.character(panther.up.genes))
+		if (length(up.genes) > 1){
+			up.pval = c()
+			up.num.genes = c()
+			up.matched.genes = c()
+			
+			for (i in 1:nrow(GO.info)){
+				full.gene.set = unlist(strsplit(GO.genes[GO.ID == GO.info$GO.ID[i]],split=","))
+				matched.up = up.genes[match(full.gene.set, up.genes, nomatch=0)]
+				up.num.genes[i]=length(matched.up)
+				if (up.num.genes[i] == 0){
+					up.matched.genes[i]=NA
+					up.pval[i]=NA
+				}else{
+					up.matched.genes[i]=paste(matched.up,collapse=",")
+
+					mat = matrix(c(length(matched.up), length(up.genes),length(full.gene.set),length(background.genes)),ncol=2)
+					result = fisher.test(mat, alternative="greater")
+					up.pval[i]=result$p.value
+				}#end else
+			}#end for (i in 1:nrow(GO.info))
+			
+			up.fdr=p.adjust(up.pval,"fdr")
+			
+			up.go.table = data.frame(GO.info, num.gene.list = up.num.genes,
+									over.enrichment.pvalue=up.pval, over.enrichment.fdr=up.fdr,
+									genes=up.matched.genes)
+			up.go.table = up.go.table[order(up.go.table$over.enrichment.pvalue),]
+			up.go.file = paste(user.folder,"/GO/",comp.name,"_FE_GO_enrichment_UP.txt",sep="")
+			write.table(up.go.table, up.go.file, row.names=F, sep="\t")
+		}#end if (length(up.genes) > 1)
+		
+		print("Performing GO enrichment for down-regulated genes")
+		down.genes = unique(as.character(panther.down.genes))
+		if (length(down.genes) > 1){
+			down.pval = c()
+			down.num.genes = c()
+			down.matched.genes = c()
+			
+			for (i in 1:nrow(GO.info)){
+				full.gene.set = unlist(strsplit(GO.genes[GO.ID == GO.info$GO.ID[i]],split=","))
+				matched.down = down.genes[match(full.gene.set, down.genes, nomatch=0)]
+				down.num.genes[i]=length(matched.down)
+				if (down.num.genes[i] == 0){
+					down.matched.genes[i]=NA
+					down.pval[i]=NA
+				}else{
+					down.matched.genes[i]=paste(matched.down,collapse=",")
+
+					mat = matrix(c(length(matched.down), length(down.genes),length(full.gene.set),length(background.genes)),ncol=2)
+					result = fisher.test(mat, alternative="greater")
+					down.pval[i]=result$p.value
+				}#end else
+			}#end for (i in 1:nrow(GO.info))
+			
+			down.fdr=p.adjust(down.pval,"fdr")
+			
+			down.go.table = data.frame(GO.info, num.gene.list = down.num.genes,
+									over.enrichment.pvalue=down.pval, over.enrichment.fdr=down.fdr,
+									genes=down.matched.genes)
+			down.go.table = down.go.table[order(down.go.table$over.enrichment.pvalue),]
+			down.go.file = paste(user.folder,"/GO/",comp.name,"_FE_GO_enrichment_DOWN.txt",sep="")
+			write.table(down.go.table, down.go.file, row.names=F, sep="\t")
+		}#end if (length(down.genes) > 1)
+	}else if(gostat.type == "GOstats"){
+		library(GOstats)
+		print("Running GOstats")
+		
+		library(org.Hs.eg.db)
+		orgdb = org.Hs.eg.db
+		orgdb.symbols = keys(orgdb, keytype="SYMBOL")
+		geneID.table = select(orgdb, keys=orgdb.symbols, columns=c("ENTREZID"), keytype="SYMBOL")
+		
+		entrezUniverse =unique(geneID.table$ENTREZID)
+		
+		print("Performing GO enrichment for up-regulated genes")
+		up.genes = panther.up.genes
+		if (length(up.genes) > 1){
+			selectedEntrezIds = geneID.table$ENTREZID[match(up.genes, geneID.table$SYMBOL,nomatch=0)]
+			
+			print("BP test")
+			params = new("GOHyperGParams",
+							geneIds=selectedEntrezIds,
+							universeGeneIds=entrezUniverse,
+							annotation="org.Hs.eg",
+							ontology="BP",
+							pvalueCutoff=1,
+							conditional=TRUE,
+							testDirection="over")
+			bpOver = hyperGTest(params)
+			bp.mat = summary(bpOver)
+			bp.mat = data.frame(bp.mat,term.type = rep("BP",nrow(bp.mat)))
+			#htmlReport(bpOver, file="test.html")
+			names(bp.mat)=c("GOID","Pvalue","OddsRatio","ExpCount","Count","Size","Term","term.type")
+			
+			print("MF test")
+			params = new("GOHyperGParams",
+							geneIds=selectedEntrezIds,
+							universeGeneIds=entrezUniverse,
+							annotation="org.Hs.eg",
+							ontology="MF",
+							pvalueCutoff=1,
+							conditional=TRUE,
+							testDirection="over")
+			mfOver = hyperGTest(params)
+			mf.mat = summary(mfOver)
+			mf.mat = data.frame(mf.mat,term.type = rep("MF",nrow(mf.mat)))
+			names(mf.mat)=c("GOID","Pvalue","OddsRatio","ExpCount","Count","Size","Term","term.type")
+								
+			print("CC test")
+			params = new("GOHyperGParams",
+							geneIds=selectedEntrezIds,
+							universeGeneIds=entrezUniverse,
+							annotation="org.Hs.eg",
+							ontology="CC",
+							pvalueCutoff=1,
+							conditional=TRUE,
+							testDirection="over")
+			ccOver = hyperGTest(params)
+			cc.mat = summary(ccOver)
+			cc.mat = data.frame(cc.mat,term.type = rep("CC",nrow(cc.mat)))
+			names(cc.mat)=c("GOID","Pvalue","OddsRatio","ExpCount","Count","Size","Term","term.type")
+
+			
+			up.go.table = rbind(bp.mat, mf.mat, cc.mat)
+			up.go.table = data.frame(up.go.table[,1:2], FDR=p.adjust(up.go.table$Pvalue,"fdr"), up.go.table[,3:8])
+			up.go.table = up.go.table[order(up.go.table$Pvalue),]
+			up.go.file = paste(user.folder,"/GO/",comp.name,"_GOstat_enrichment_UP.txt",sep="")
+			write.table(up.go.table, up.go.file, row.names=F, sep="\t")
+		}#end if (length(up.genes) > 1)
+		
+		print("Performing GO enrichment for down-regulated genes")
+		down.genes = panther.down.genes
+		if (length(down.genes) > 1){
+			selectedEntrezIds = geneID.table$ENTREZID[match(down.genes, geneID.table$SYMBOL,nomatch=0)]
+			
+			print("BP test")
+			params = new("GOHyperGParams",
+							geneIds=selectedEntrezIds,
+							universeGeneIds=entrezUniverse,
+							annotation="org.Hs.eg",
+							ontology="BP",
+							pvalueCutoff=1,
+							conditional=TRUE,
+							testDirection="over")
+			bpOver = hyperGTest(params)
+			bp.mat = summary(bpOver)
+			bp.mat = data.frame(bp.mat,term.type = rep("BP",nrow(bp.mat)))
+			#htmlReport(bpOver, file="test.html")
+			names(bp.mat)=c("GOID","Pvalue","OddsRatio","ExpCount","Count","Size","Term","term.type")
+			
+			print("MF test")
+			params = new("GOHyperGParams",
+							geneIds=selectedEntrezIds,
+							universeGeneIds=entrezUniverse,
+							annotation="org.Hs.eg",
+							ontology="MF",
+							pvalueCutoff=1,
+							conditional=TRUE,
+							testDirection="over")
+			mfOver = hyperGTest(params)
+			mf.mat = summary(mfOver)
+			mf.mat = data.frame(mf.mat,term.type = rep("MF",nrow(mf.mat)))
+			names(mf.mat)=c("GOID","Pvalue","OddsRatio","ExpCount","Count","Size","Term","term.type")
+								
+			print("CC test")
+			params = new("GOHyperGParams",
+							geneIds=selectedEntrezIds,
+							universeGeneIds=entrezUniverse,
+							annotation="org.Hs.eg",
+							ontology="CC",
+							pvalueCutoff=1,
+							conditional=TRUE,
+							testDirection="over")
+			ccOver = hyperGTest(params)
+			cc.mat = summary(ccOver)
+			cc.mat = data.frame(cc.mat,term.type = rep("CC",nrow(cc.mat)))
+			names(cc.mat)=c("GOID","Pvalue","OddsRatio","ExpCount","Count","Size","Term","term.type")
+
+			
+			down.go.table = rbind(bp.mat, mf.mat, cc.mat)
+			down.go.table = data.frame(down.go.table[,1:2], FDR=p.adjust(down.go.table$Pvalue,"fdr"), down.go.table[,3:8])
+			down.go.table = down.go.table[order(down.go.table$Pvalue),]
+			down.go.file = paste(user.folder,"/GO/",comp.name,"_GOstat_enrichment_DOWN.txt",sep="")
+			write.table(down.go.table, down.go.file, row.names=F, sep="\t")
+		}#end if (length(down.genes) > 1)
+		
+	}else{
+		stop("To run GO enrichment in R, 'R_GO_type' must be 'GOstats' or 'GO.db'")
+	}
+}#end if((length(deg.genes) > 1) & (run.gostat == "yes"))
