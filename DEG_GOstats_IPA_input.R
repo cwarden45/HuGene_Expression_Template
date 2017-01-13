@@ -932,8 +932,8 @@ if((length(deg.genes) > 1) & (run.gostat == "yes")){
 		library(GO.db)
 		library(org.Hs.eg.db)
 		orgdb = org.Hs.eg.db
-		orgdb.GOIDs = keys(orgdb, keytype="GO")
-		hg.goid.table = select(orgdb, keys=orgdb.GOIDs, columns=c("SYMBOL"), keytype="GO")
+		orgdb.GOIDs = keys(orgdb, keytype="GOALL")
+		hg.goid.table = select(orgdb, keys=orgdb.GOIDs, columns=c("SYMBOL"), keytype="GOALL")
 		
 		GO.ID = keys(GO.db)
 		GO.term = c()
