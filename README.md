@@ -18,7 +18,7 @@ Template for normalization, QC, differential expression, and preparation of file
 
 4) `qc.R`
 
-5) `DEG_GOstat_IPA_input.R`
+5) `DEG_GOstats_IPA_input.R`
 
  - also creates input files for PANTHER (including gene symbol background set) and DAVID
 
