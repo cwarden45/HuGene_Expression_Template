@@ -36,6 +36,8 @@ HuGene-2.0 (.pgf, .clf, .bgp, Transcript Cluster .mps files): [Library Files](ht
 
 HuGene-2.0 (gene annotations): [probeset](http://www.affymetrix.com/Auth/analysis/downloads/na36/wtgene/HuGene-2_0-st-v1.na36.hg19.probeset.csv.zip) and [transcript cluster](http://www.affymetrix.com/Auth/analysis/downloads/na36/wtgene/HuGene-2_0-st-v1.na36.hg19.transcript.csv.zip) annotations are under `Current NetAffx Annotation Files`
 
+org.Hs.eg.db: http://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html (used if running GO enrichment within R)
+
 *Differential Expression*
 
 limma: https://bioconductor.org/packages/release/bioc/html/limma.html
@@ -54,9 +56,9 @@ heatmap.3 example: https://www.biostars.org/p/18211/
 
 *Gene Set Enrichment (in most cases, downstream of templates)*
 
-[GOstats](http://bioconductor.org/packages/release/bioc/html/GOstats.html) and [pd.hugene.2.0.st](https://bioconductor.org/packages/release/data/annotation/html/pd.hugene.2.0.st.html)
+GOstats: http://bioconductor.org/packages/release/bioc/html/GOstats.html)
 
-[GO.db](http://bioconductor.org/packages/release/data/annotation/html/GO.db.html) and [org.Hs.eg.db](http://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html) - used for mapping expression summarized based upon gene symbol, with enrichment calculated via fisher.test() instead of GOstats
+GO.db: http://bioconductor.org/packages/release/data/annotation/html/GO.db.html  - used for mapping expression summarized based upon gene symbol, with enrichment calculated via fisher.test() instead of GOstats
 
 IPA: http://www.ingenuity.com/
 
