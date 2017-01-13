@@ -54,13 +54,13 @@ heatmap.3: https://github.com/obigriffith/biostar-tutorials/blob/master/Heatmaps
 
 heatmap.3 example: https://www.biostars.org/p/18211/
 
-*Gene Set Enrichment (in most cases, downstream of templates)*
-
-GOstats: http://bioconductor.org/packages/release/bioc/html/GOstats.html)
+*Gene Set Enrichment (some options downstream of templates)*
 
 GO.db: http://bioconductor.org/packages/release/data/annotation/html/GO.db.html
 
 IPA: http://www.ingenuity.com/
+
+GOstats: http://bioconductor.org/packages/release/bioc/html/GOstats.html)
 
 PANTHER: http://www.pantherdb.org/
 
