@@ -109,4 +109,4 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 |interaction| Method for comparing an interaction of two variables.  Can be *model*, *filter-overlap*, or *no*|
 |secondary_trt| If comparing two gene lists, this is treatment group for the list that you want to filter out; enter *continuous* for a continuous variable and a correlation will be provided instead of a fold-change value (also converts second variable from factor to numeric, even if interaction is set to *no*)|
 |R_GO|Run GOstat (map by transcript cluster) or perform Fisher Exact Test on gene symbols in GO.db?  Can be *yes* or *no*|
-|R_GO_type|Method to calculate GO enrichment in R.  Can be *GOstats* or *GO.db* (custom code, but longer run-time)|
+|R_GO_type|Method to calculate GO enrichment in R.  Can be *GOstats* or *GO.db* (Fisher Exact Test on desired GO.db gene sets: note longer run-time)|
