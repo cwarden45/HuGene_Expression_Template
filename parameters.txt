@@ -38,3 +38,4 @@ sec_fdr_cutoff	1.00
 interaction	no
 secondary_trt	NA
 R_GO  no
+R_GO_type GOstats
