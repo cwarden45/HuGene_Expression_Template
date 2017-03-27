@@ -14,7 +14,7 @@ DABG_Probeset_Folder	DABG_Probeset
 Call_Rate_Table	probeset_custom_call_rate.txt
 pvalue_method	limma
 fdr_method	BH
-sample_description_file	sample_description_v2.txt
+sample_description_file	sample_description.txt
 cluster_distance	Pearson_Dissimilarity
 probeset_gene_annotations	HuGene-2_0-st-v1.na36.hg19.probeset.csv
 transcript_cluster_annotations	HuGene-2_0-st-v1.na36.hg19.transcript.csv
