@@ -68,6 +68,11 @@ DAVID: https://david.ncifcrf.gov/summary.jsp
 
 GATHER: http://changlab.uth.tmc.edu/gather/
 
+You have to edit the code to work with other arrays, but GO enrichment will still work if you use annotations for organism of interest:
+
+Mouse - http://bioconductor.org/packages/release/data/annotation/html/org.Mm.eg.db.html
+
+Rat - http://bioconductor.org/packages/release/data/annotation/html/org.Rn.eg.db.html
 
 ### Parameter Values ###
 | Parameter | Value|
