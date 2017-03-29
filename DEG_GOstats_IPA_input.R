@@ -979,7 +979,8 @@ if((length(deg.genes) > 1) & (run.gostat == "yes")){
 				}else{
 					up.matched.genes[i]=paste(matched.up,collapse=",")
 
-					mat = matrix(c(length(matched.up), length(up.genes),length(full.gene.set),length(background.genes)),ncol=2)
+					mat = matrix(c(length(matched.up), length(up.genes)-length(matched.up),
+						       length(full.gene.set),length(background.genes)-length(full.gene.set)),ncol=2)
 					result = fisher.test(mat, alternative="greater")
 					up.pval[i]=result$p.value
 				}#end else
@@ -1012,7 +1013,8 @@ if((length(deg.genes) > 1) & (run.gostat == "yes")){
 				}else{
 					down.matched.genes[i]=paste(matched.down,collapse=",")
 
-					mat = matrix(c(length(matched.down), length(down.genes),length(full.gene.set),length(background.genes)),ncol=2)
+					mat = matrix(c(length(matched.down), length(down.genes)-length(matched.down),
+						       length(full.gene.set),length(background.genes)-length(full.gene.set)),ncol=2)
 					result = fisher.test(mat, alternative="greater")
 					down.pval[i]=result$p.value
 				}#end else
