@@ -1,30 +1,30 @@
-normalizeTotalExpression <- function (geneExpr, totalReads) {
+normalizeTotalExpression = function (geneExpr, totalReads) {
 	return(geneExpr / totalReads)
 }#end def normalizeTotalExpression
 
-avgGroupExpression <- function (geneExpr, groups) {
+avgGroupExpression = function (geneExpr, groups) {
 	avg.expr = tapply(geneExpr, groups, mean)
 	return(avg.expr)
 }#end def avgGroupExpression
 
-standardize.arr <- function(arr)
+standardize.arr = function(arr)
 {
 	center.arr = as.numeric(arr) - mean(as.numeric(arr), na.rm=T)
 	norm.arr = center.arr / sd(center.arr, na.rm=T)
 	return(norm.arr)
 }#end def standardize.arr
 
-count.defined.values <- function(arr, expr.cutoff)
+count.defined.values = function(arr, expr.cutoff)
 {
 	return(length(arr[arr > expr.cutoff]))
 }#end def count.values
 
-count.na.values <- function(arr)
+count.na.values = function(arr)
 {
 	return(length(arr[is.na(arr)]))
 }#end def count.values
 
-ratio2fc <- function(value)
+ratio2fc = function(value)
 {
 	if(value >= 0){
 		return(2^value)
@@ -33,7 +33,7 @@ ratio2fc <- function(value)
 	}
 }#end def ratio2fc
 
-gene.lm <- function(arr, var1, var2=c(), var3=c())
+gene.lm = function(arr, var1, var2=c(), var3=c())
 {	
 	if (length(var2) == 0){
 		fit = lm(as.numeric(arr) ~ var1)
@@ -51,7 +51,7 @@ gene.lm <- function(arr, var1, var2=c(), var3=c())
 	return(pvalue)
 }#end def gene.lm
 
-gene.aov <- function(arr, var1, var2=c(), var3=c())
+gene.aov = function(arr, var1, var2=c(), var3=c())
 {	
 	if (length(var2) == 0){
 		fit = aov(as.numeric(arr) ~ var1)
@@ -175,7 +175,7 @@ if(length(deg.groups) == 1){
 		var1 = sample.description.table[,deg.groups[1]]
 		var2 = sample.description.table[,deg.groups[2]]
 		deg.samples = !is.na(var1)&!is.na(var2)
-		deg.counts = counts[,deg.samples]
+		deg.RMA = rma.mat[,deg.samples]
 		var1 = var1[deg.samples]
 		var2 = var2[deg.samples]
 			
