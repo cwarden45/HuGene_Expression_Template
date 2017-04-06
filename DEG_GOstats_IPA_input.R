@@ -286,7 +286,7 @@ if((interaction.flag == "no") & (trt.group != "continuous")){
 		fc.table = data.frame(prim.fc=prim.fc, sec.cor = gene.cor2)
 	} else {
 		print("Calculating fold-change table for primary variables (within subsets of secondary variable)")
-		prim.groups = paste(var1,var2,sep=":")
+		prim.groups = as.character(levels(var1))
 		prim.trt = paste(trt.group,trt.group2,sep=":")
 		prim.cntl = paste(prim.groups[prim.groups != trt.group],trt.group2,sep=":")
 		prim.trt.expr = contrast.rma[,paste("avg.log2.rma", sub("-",".",prim.trt), sep=".")]
