@@ -114,6 +114,6 @@ Rat - http://bioconductor.org/packages/release/data/annotation/html/org.Rn.eg.db
 |sec_pvalue_cutoff|If comparing two gene lists, p-value threshold for list you want to filter out|
 |sec_fdr_cutoff|If comparing two gene lists, FDR threshold for list you want to filter out|
 |interaction| Method for comparing an interaction of two variables.  Can be *model*, *filter-overlap*, or *no*|
-|secondary_trt| If comparing two gene lists, this is treatment group for the list that you want to filter out; enter *continuous* for a continuous variable and a correlation will be provided instead of a fold-change value (also converts second variable from factor to numeric, even if interaction is set to *no*)|
+|secondary_trt| A somewhat confusing variable  - If comparing two variables, this is variable whose effect you would like to adjust; enter *continuous* for a continuous variable and a correlation will be provided instead of a fold-change value (also converts second variable from factor to numeric, even if interaction is set to *no*); if using *filter-overlap*, this is should be the primary group (but that code is tested the least frequently)|
 |R_GO|Run GOstat (map by transcript cluster) or perform Fisher Exact Test on gene symbols in GO.db?  Can be *yes* or *no*|
 |R_GO_type|Method to calculate GO enrichment in R.  Can be *GOstats* or *GO.db* (Fisher Exact Test on desired GO.db gene sets)|
