@@ -304,13 +304,12 @@ if((interaction.flag == "no") & (trt.group != "continuous")){
 		sec.log2ratio = round(sec.trt.expr - sec.cntl.expr, digits = 2)
 		sec.fc = round(sapply(sec.log2ratio, ratio2fc), digits = 2)
 
-		overall.log2ratio = prim.log2ratio - sec.log2ratio
-		overall.fc = round(sapply(overall.log2ratio, ratio2fc), digits = 2)
+		overall.fc =round(prim.fc-sec.fc, digits=2)
 
 		fc.table = data.frame(fc1 = prim.fc, fc2=sec.fc, fc3=overall.fc)
 		colnames(fc.table) = c(paste("fold.change",trt.group,":",trt.group2,sep="."),
 								paste("fold.change",trt.group,":",sec.groups[sec.groups != trt.group2], sep="."),
-								"overall.fold.change")
+								"fold.change.diff")
 	}#end else
 }else if(trt.group == "continuous"){
 	print("Skipping fold-change calculation for continuous variable")
