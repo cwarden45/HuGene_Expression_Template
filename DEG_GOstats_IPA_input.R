@@ -702,6 +702,12 @@ if(rep.check == 1){
 							average.rma, fc.table, status = status)	
 }#end else
 
+all.status = table(status)
+annotated.status = table(status[!is.na(genes)])
+annotated.status = annotated.status[match(names(all.status),names(annotated.status))]
+annotated.status[is.na(annotated.status)]=0
+print(annotated.status/all.status)
+
 deg.file = paste(comp.name,"_",pvalue.method,"_DEG_fc_",fc.cutoff,"_fdr_",fdr.cutoff,"_pval_",pvalue.cutoff,".txt",sep="")
 deg.file = gsub(":",".",deg.file)
 write.table(deg.table, file=deg.file, row.names=F, quote=F, sep="\t")
