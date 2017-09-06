@@ -986,7 +986,7 @@ if((length(deg.genes) > 1) & (run.gostat == "yes")){
 
 					matched.background = intersect(full.gene.set, background.genes)
 					mat = matrix(c(length(matched.up), length(up.genes)-length(matched.up),
-						       length(matched.background),background.genes-length(matched.background)),ncol=2)
+						       length(matched.background),length(background.genes)-length(matched.background)),ncol=2)
 					result = fisher.test(mat, alternative="greater")
 					up.pval[i]=result$p.value
 				}#end else
@@ -1021,7 +1021,7 @@ if((length(deg.genes) > 1) & (run.gostat == "yes")){
 
 					matched.background = intersect(full.gene.set, background.genes)
 					mat = matrix(c(length(matched.down), length(down.genes)-length(matched.down),
-						       length(matched.background),background.genes-length(matched.background)),ncol=2)
+						       length(matched.background),length(background.genes)-length(matched.background)),ncol=2)
 					down.pval[i]=result$p.value
 				}#end else
 			}#end for (i in 1:nrow(GO.info))
