@@ -54,7 +54,7 @@ call.table = call.table[match(sampleID, call.table$sample),]
 call.rate = as.numeric(gsub("%","",as.character(call.table$call.rate)))
 
 call.rate.group = rep("FFPEmed",length(call.rate))
-call.rate.group[call.rate < 25]="FFPElow"
+call.rate.group[call.rate < 20]="FFPElow"
 call.rate.group[call.rate > 50]="FFPEgood"
 call.rate.group[call.rate > 70]="good"
 
