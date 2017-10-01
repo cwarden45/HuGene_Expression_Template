@@ -384,7 +384,7 @@ if(rep.check == 1){
 				pvalue.mat = data.frame(fit$p.value)
 				test.pvalue = pvalue.mat[,2]
 			} else if ((length(deg.groups) == 2)&(interaction.flag == "no")){
-				print("limma-voom with 2 variables")
+				print("limma with 2 variables")
 
 				if (trt.group == "continuous"){
 					var1 = as.numeric(var1)
