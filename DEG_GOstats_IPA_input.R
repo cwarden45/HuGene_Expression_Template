@@ -722,19 +722,19 @@ write.table(IPA.file, file=paste(user.folder,"/IPA/",comp.name,"_for_IPA.txt",se
 panther.background.genes = genes[(deg.table$genes.per.probe==1) & !is.na(deg.table$genes.per.probe)]
 print(length(panther.background.genes))
 print(length(unique(panther.background.genes)))
-panther.background.file = paste(user.folder,"/GO/Input_Files/",comp.name,"_BACKGROUND_for_PANTHER.txt",sep="")
+panther.background.file = paste(user.folder,"/GO/web_input_files/",comp.name,"_BACKGROUND_for_PANTHER.txt",sep="")
 write.table(data.frame(genes=panther.background.genes),panther.background.file, quote=F, row.names=F)
 
 panther.up.genes = genes[(deg.table$status == upID) & (deg.table$genes.per.probe==1) & !is.na(deg.table$genes.per.probe)]
 print(length(panther.up.genes))
 print(length(unique(panther.up.genes)))
-panther.up.file = paste(user.folder,"/GO/Input_Files/",comp.name,"_UP_for_PANTHER.txt",sep="")
+panther.up.file = paste(user.folder,"/GO/web_input_files/",comp.name,"_UP_for_PANTHER.txt",sep="")
 write.table(data.frame(genes=panther.up.genes),panther.up.file, quote=F, row.names=F)
 
 panther.down.genes = genes[(deg.table$status == downID) & (deg.table$genes.per.probe==1) & !is.na(deg.table$genes.per.probe)]
 print(length(panther.down.genes))
 print(length(unique(panther.down.genes)))
-panther.down.file = paste(user.folder,"/GO/Input_Files/",comp.name,"_DOWN_for_PANTHER.txt",sep="")
+panther.down.file = paste(user.folder,"/GO/web_input_files/",comp.name,"_DOWN_for_PANTHER.txt",sep="")
 write.table(data.frame(genes=panther.down.genes),panther.down.file, quote=F, row.names=F)
 
 temp.rma = rma.mat
