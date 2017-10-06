@@ -65,10 +65,12 @@ if (summary.type == "gene_symbol"){
 
 	gene.per.probe.count = rep(1,length(probesetID))
 	gene.per.probe.count[grep("^\\d",probesetID,perl=T)]=NA
+	Symbol = probesetID
+	Symbol[grep("^\\d",probesetID,perl=T)]=NA
 	
-	annotated.expression = data.frame(transcript.cluster=probesetID, Symbol=probesetID,
-										probe.count=probe.count,Num.Genes=gene.per.probe.count,
-										rma.mat)
+	annotated.expression = data.frame(transcript.cluster=probesetID, Symbol,
+						probe.count=probe.count,Num.Genes=gene.per.probe.count,
+						rma.mat)
 	write.table(annotated.expression, file = rma.table, sep="\t", row.names=F, quote=T)
 
 }else if (summary.type == "transcript_cluster"){
