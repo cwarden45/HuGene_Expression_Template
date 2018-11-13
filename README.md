@@ -2,9 +2,9 @@ Template for normalization, QC, differential expression, and preparation of file
 
 ### Acknowledgements ###
 
-Code developed when providing analysis support from the City of Hope Integrative Genomics Core with requests / suggestions from *Marc Baum* ([OCIS](http://www.oak-crest.org/); influence on early QC plots, but for processed Agilent expression data), Yuan Yuan (initial testing) and Joo Song + Alex Herrera / Vanessa Jonsson / Wing-Chung “John” Chan (parameterization of scripts; test signature predictions).
+Code developed when providing analysis support from the City of Hope Integrative Genomics Core with requests / suggestions from *Marc Baum* ([OCIS](http://www.oak-crest.org/); influence on early QC plots, but for processed Agilent expression data), *Yuan Yuan* (initial testing) and *Joo Song + Alex Herrera / Vanessa Jonsson / Wing-Chung “John” Chan* (parameterization of scripts; test signature predictions).
 
-I would also like to thank the following users that gave us permission to acknowledge these templates (or scripts similar to these templates) were used for analysis of their data: Rama Natarajan (Affy Clariom S Rat Array, for Vishnu Samarasimhasubhashchandra) and Vu Ngo (analysis with modification of templates for analysis of Agilent Array data).
+I would also like to thank the following users that gave us permission to acknowledge these templates (or scripts similar to these templates) were used for analysis of their data: *Rama Natarajan* (Affy Clariom S Rat Array, for Vishnu Samarasimhasubhashchandra) and *Vu Ngo* (analysis with modification of templates for analysis of Agilent Array data).
 
 In general, some projects have been analyzed or re-analyzed with different staff members (sometimes in different labs/institutes, sometimes within the IGC).  So, the use of data with modified versions of these templates may not be what is eventually used in the associated publication; however, I will update links for projects using data from the modified templates as much as possible (over the next few years).
 
