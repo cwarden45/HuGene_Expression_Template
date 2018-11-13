@@ -1,5 +1,3 @@
-Template for normalization, QC, differential expression, and preparation of files for downstream analysis
-
 ### Acknowledgements ###
 
 Code developed when providing analysis support from the City of Hope Integrative Genomics Core with requests / suggestions from *Marc Baum* ([OCIS](http://www.oak-crest.org/); influence on early QC plots, but for processed Agilent expression data), *Yuan Yuan* (initial testing) and *Joo Song + Alex Herrera / Vanessa Jonsson / Wing-Chung “John” Chan* (parameterization of scripts; test signature predictions).
@@ -9,7 +7,6 @@ I would also like to thank the following users that gave us permission to acknow
 In general, some projects have been analyzed or re-analyzed with different staff members (sometimes in different labs/institutes, sometimes within the IGC).  So, the use of data with modified versions of these templates may not be what is eventually used in the associated publication; however, I will update links for projects using data from the modified templates as much as possible (over the next few years).
 
 Xiwei Wu (the Director of the Integrative Genomics Core) was kind enough to review this acknowledgement, and he approves of the content.
-
 
 ### \~Temporary Note\~ ###
 **I apologize for the confusion, but I would like to emphasize that these are called “templates” because I almost always have to modify the code for each project (beyond the parameter files), meaning they will be more difficult for other people to use in the same way.**  This was unfortunately not immediately clear to me when I created the templates.
