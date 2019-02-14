@@ -1,6 +1,6 @@
 ### Acknowledgements ###
 
-Code developed when providing analysis support from the City of Hope Integrative Genomics Core with requests / suggestions from **Marc Baum** ([OCIS](http://www.oak-crest.org/); influence on early QC plots, but for processed Agilent expression data), **Yuan Yuan MD/PhD** (initial testing) and **Joo Song + Alex Herrera / Vanessa Jonsson / Wing-Chung “John” Chan** (parameterization of scripts; test signature predictions).
+Code developed when providing analysis support from the City of Hope Integrative Genomics Core with requests / suggestions from **Marc Baum** ([OCIS](http://www.oak-crest.org/); influence on early QC plots, but for processed Agilent expression data), **Yuan Yuan MD/PhD** (initial testing; includes samples presented in [Zhao et al. 2019](https://bmccancer.biomedcentral.com/articles/10.1186/s12885-019-5290-4)) and **Joo Song + Alex Herrera / Vanessa Jonsson / Wing-Chung “John” Chan** (parameterization of scripts; test signature predictions).
 
 I would also like to thank the following users that gave us permission to acknowledge these templates (or scripts similar to these templates) were used for analysis of their data: **Rama Natarajan** (Affy Clariom S Rat Array, for Vishnu Samarasimhasubhashchandra) and **Vu Ngo** (analysis with modification of templates for analysis of Agilent Array data).
 
